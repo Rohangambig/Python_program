@@ -1,0 +1,36 @@
+a = int(input("Enter the value of a"))
+b = int(input("Enter the value of b"))
+c = int(input("Enter the value of c"))
+
+if(a==0):
+    print("Invalid") 
+    exit()
+
+d = b*b - 4*a*c
+
+if(d>0):
+    print("Roots are real and distinct")
+    r1 = (-b+math.sqrt(d))/(2*a)
+    r2 = (-b-math.sqrt(d))/(2*a)
+    print(r1 ,"\n", r2)
+
+elif d==0:
+    print("Roots are real and equal")
+    r1 = r2 = -b/(2*a)
+    print(r1)
+
+else:
+    print("Roots are imaginary")
+    r1 = -b/(2*a)
+    r2 =  math.sqrt(abs(d))/(2*a)
+    print(r1,r2)
+
+output :
+
+Enter the value of a1
+Enter the value of b5
+Enter the value of c2
+
+Roots are real and distinct
+-0.4384471871911697 
+ -4.561552812808831

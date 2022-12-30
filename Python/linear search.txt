@@ -1,0 +1,29 @@
+n = int(input("enter the size of an array : "))
+a=[]
+for i in range(n):
+    value = int(input("enter the elements of an array "))
+    a.append(value)
+print(a)
+key = int(input("enter the elements to be search : "))
+flag = 0
+for i in range(n):
+    if(a[i] == key):
+        flag = 1
+        break
+if(flag==1):
+    print("element is found : ")
+else:
+    print("elments is not found")
+
+
+output :
+
+
+enter the size of an array : 4
+enter the elements of an array 1
+enter the elements of an array 2
+enter the elements of an array 3
+enter the elements of an array 4
+[1, 2, 3, 4]
+enter the elements to be search : 6
+elments is not found

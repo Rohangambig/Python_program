@@ -1,0 +1,33 @@
+n =  int(input("enter the size of an array  : "))
+a = []
+c=[]
+b = []
+for i in range(n):
+    value1 = int(input("enter the elements of an array a : "))
+    a.append(value1)
+print(a)
+for j in range(n):
+    value2 = int(input("enter the elemets of an array b: "))
+    b.append(value2)
+print(b)
+for i in range(n):
+    value3 = a[i] + b[i]
+    c.append(value3)
+print("sum of the two array is given by : ")
+print(c)
+
+output : 
+
+enter the size of an array  : 4
+enter the elements of an array a : 2
+enter the elements of an array a : 3
+enter the elements of an array a : 4
+enter the elements of an array a : 5
+[2, 3, 4, 5]
+enter the elemets of an array b: 1
+enter the elemets of an array b: 2
+enter the elemets of an array b: 3
+enter the elemets of an array b: 1
+[1, 2, 3, 1]
+sum of the two array is given by : 
+[3, 5, 7, 6]

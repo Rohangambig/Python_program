@@ -1,0 +1,30 @@
+n = int(input("enter the number : "))
+a=[]
+i=0
+while(i<n):
+    value = int(input("enter the elements in an array"))
+    a.append(value)
+    i+=1
+print(a)
+adress =  int(input("Enter the adress of the elements where the elements to be insert : "))
+ele = int(input("Enter the elements to be insert : "))
+i=n-1
+a.append(None)
+while(i>=adress-1):
+    a[i+1] = a[i]
+    i-=1
+a[adress] = ele
+print(a)
+
+
+output :
+
+enter the number : 4
+enter the elements in an array2
+enter the elements in an array3
+enter the elements in an array4
+enter the elements in an array5
+[2, 3, 4, 5]
+Enter the adress of the elements where the elements to be insert : 2
+Enter the elements to be insert : 55
+[2, 3, 55, 4, 5]
