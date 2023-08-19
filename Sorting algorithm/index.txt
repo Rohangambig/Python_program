@@ -1,0 +1,1 @@
+In this folder ' Sorting algorithm ' i pushed all sorting algortihm related to python
