@@ -1,0 +1,22 @@
+class Shape:
+    def __init__(self,name):
+        self.name = name
+        self.area = 0 
+        self.perimeter = 0
+    def Display(self):
+        print(f"Area of {self.name} is {self.area}")
+        print(f"perimeter of {self.name} is {self.perimeter}")
+class Area(Shape):
+    def __init__(self,name,lenght,breadth):
+        self.name = name
+        self.lenght = lenght
+        self.breadth = breadth
+    def AreaOfSquare(self):
+        self.area = self.lenght *self.breadth
+    def PerimeterOfSquare(self):
+        self.perimeter = 4 * self.lenght ;
+
+S = Area('Square',4,4)
+S.PerimeterOfSquare()
+S.AreaOfSquare()
+S.Display()
