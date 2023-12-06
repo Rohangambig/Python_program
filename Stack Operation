@@ -1,0 +1,33 @@
+#  Stack using list
+def Push():
+    if len(stack) == n:
+        print("Stack is full")
+    else:
+        stack.append(int(input("Enter the elements to be insert : ")))
+    Display()
+    
+def Pop():
+    if not stack:
+        print("Stack is empty")
+    else:
+        stack.pop()
+    Display()
+    
+def Peek():
+    if not stack:
+        print("Stack is empty")
+    else:
+        print(f"Top items in the stack is : {stack[-1]}")
+    Display()   
+    
+def Display():
+    print(stack)
+n = int(input("Enter the elements of the stack : "))
+stack = []
+while True:
+    print("Enter your choice : ")
+    ch = int(input("1.Push\n2.Pop\n3.Peek\n4.End\n"))
+    if ch == 1:Push()
+    elif ch == 2:Pop()
+    elif ch == 3:Peek()
+    else:break
