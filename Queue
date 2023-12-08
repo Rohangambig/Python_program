@@ -1,0 +1,49 @@
+#  Queue operation using list
+
+# Pushing the elements into the queue called front End
+def Enqueue():
+    if len(q) == n:
+        print("Queue is full ")
+    else:
+        q.append(int(input("Enter the elements to be insert : ")))
+  
+     
+# Deleting the elements from the queue called rear Endd
+def Dequeue():
+    if not q:
+        print("Queue is empty ")
+    else:
+        q.pop(0)
+       
+    
+#Check whethere the queue is empty or not 
+def Empty():
+    if not q:
+        print("Queue is empty")
+    else:
+        print("Queue is not emtpy")
+       
+
+#Displaying the elements present in the queue
+def Display():
+    if not q:
+        print("Queue is empty")
+    else:
+        print("Queue : ",q)
+        
+        
+n = int(input("Enter the size of the queue : "))
+q = []
+while True:
+    print("\nEnter your choice : ")
+    ch = int(input("\n1.Enqueue\n2.Dequeue\n3.Empty\n4Display\n5.End\n"))
+    if ch == 1:
+        Enqueue()
+    elif ch == 2:
+        Dequeue()
+    elif ch == 3:
+        Empty()
+    elif ch == 4:
+        Display()
+    else:
+        break
