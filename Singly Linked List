@@ -1,0 +1,103 @@
+# Linked list operation ....
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.link = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    def Push(self,item):
+        new_node = Node(item)
+        if not self.head:
+            self.head = new_node
+            return
+        else:
+            current_node = self.head
+            while current_node.link:
+                current_node = current_node.link
+            current_node.link = new_node
+    def Display(self):
+        if not self.head:
+            print("Linked list is empty")
+            return
+        else:
+            current_node = self.head
+            while current_node:
+                print(current_node.data,'->',end =' ')
+                current_node = current_node.link
+            print("None")
+    def Pop(self):
+        if not self.head :
+            print("Linked list is empty")
+            return
+        else:
+            current_node = self.head
+            while current_node.link.link:
+                current_node = current_node.link
+            current_node.link = None
+    def InsertPos(self,item,pos):
+        if not self.head:
+            print("Linked list is empty")
+            return 
+        else:
+            new_node = Node(item)
+            current_node = self.head
+            i = 1
+            while current_node:
+                if i == pos-1:
+                    new_node.link = current_node.link
+                    current_node.link = new_node
+                    break
+                i+=1
+                current_node = current_node.link
+    def DeletePos(self,pos):
+        if not self.head:
+            print("Linked list is empty")
+            return
+        else:
+            pre_node =  self.head
+            current_node  = pre_node.link
+            i = 1
+            while current_node:
+                if i == pos-1:
+                    pre_node.link = current_node.link
+                i+=1
+                pre_node = pre_node.link
+                current_node = current_node.link
+    def InsertFirst(self,item):
+        if not self.head :
+            print("Linked list is empty")
+            return
+        else:
+            new_node = Node(item)
+            current_node = self.head
+            new_node.link = current_node
+            self.head = new_node
+    def DeleteFirst(self):
+        if not self.head:
+            print("Linked list is empty")
+            return
+        else:
+            self.head = self.head.link
+    
+L = LinkedList()
+while True:
+    print(" \nEnter your choice : ")
+    ch = int(input("1.Push\n2.Display\n3.Pop\n4.Insert at given position\n5.Delete at position\n6.Insert at first\n7.Delete at first\nPress any number greater than 7 for exit"))
+    if ch == 1:
+        L.Push(int(input("Enter the elements to be insert : ")))
+    elif ch == 2:
+        L.Display()
+    elif ch == 3:
+        L.Pop()
+    elif ch == 4:
+        L.InsertPos(int(input("Enter the element to be insert : ")), int(input("Enter the position where the elements to be insert :")))
+    elif ch == 5:
+        L.DeletePos(int(input("Enter the position where the elements to be insert  : ")))
+    elif ch == 6:
+        L.InsertFirst(int(input("Enter the elements to be insert  : ")))
+    elif ch == 7:
+        L.DeleteFirst()
+    else:
+        break
