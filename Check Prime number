@@ -1,0 +1,19 @@
+from abc import ABC,abstractmethod
+class Prime():
+    def __init__(self):
+        self.result = False
+    # @abstractmethod
+    def __Check(self,num):
+        for i in range(3,num):
+            if num % i:
+                self.result = True
+                return
+    def __Result(self):
+        print("Entered number is prime number") if self.result else print("Entered number is not a prime number")
+        return
+            
+    
+num = int(input("Enter the number : "))
+P = Prime()
+P._Prime__Check(num)
+P._Prime__Result()
