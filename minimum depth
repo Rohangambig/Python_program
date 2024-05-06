@@ -1,0 +1,59 @@
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.left = self.right = None
+    
+class Tree:
+    def __init__(self):
+        self.root = None
+        
+    def Insert(self,data):
+        new_node = Node(data)
+        
+        if not self.root:
+            self.root = new_node
+            return self.root
+            
+        cur_node = self.root
+        while cur_node:
+            if cur_node.data > data:
+                if not cur_node.left:
+                    cur_node.left = new_node
+                    break
+                else:
+                    cur_node = cur_node.left
+            else:
+                if not cur_node.right:
+                    cur_node.right = new_node
+                    break
+                else:
+                    cur_node = cur_node.right
+                    
+        return self.root
+        
+    def Inorder(self,root):
+        if root:
+            self.Inorder(root.left)
+            print(root.data,end=" ")
+            self.Inorder(root.right)
+    
+    def Minimum(self,root):
+        if not root:
+            return 0
+            
+        elif not root.left or not root.right:
+            return 1 + max(self.Minimum(root.left),self.Minimum(root.right))
+        else:
+            return 1 + min(self.Minimum(root.left),self.Minimum(root.right))
+            
+T = Tree()
+         
+root = T.Insert(4)   
+root = T.Insert(2)  
+root = T.Insert(3)  
+root = T.Insert(5)  
+
+T.Inorder(root)
+
+print('\n',T.Minimum(root))
+            
